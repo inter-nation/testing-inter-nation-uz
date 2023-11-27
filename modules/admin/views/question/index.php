@@ -36,6 +36,22 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'description:text',
             'created_at:date',
+            [
+                'header' => 'Fields',
+                'value' => function (\app\models\Question $question) {
+                    $badges = [];
+                    foreach ($question->answers as $answer) {
+                        $badges[] = Html::tag('span', $answer->title, [
+                           'class' => [
+                               'badge',
+                               $answer->is_right_answer ? 'badge-success bg-success' : 'badge-info bg-info',
+                               'm-1'
+                           ]
+                        ]);
+                    }
+                    return implode("", $badges);
+                }
+            ],
             //'updated_at',
 
             ['class' => 'yii\grid\ActionColumn'],
