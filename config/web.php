@@ -1,7 +1,7 @@
 <?php
 
 use app\components\LanguageSetter;
-use yii\bootstrap4\Html;
+use yii\helpers\Html;
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
