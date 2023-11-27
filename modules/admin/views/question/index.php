@@ -50,7 +50,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]);
                     }
                     return implode("", $badges);
-                }
+                },
+                'format' => 'html'
             ],
             //'updated_at',
 
