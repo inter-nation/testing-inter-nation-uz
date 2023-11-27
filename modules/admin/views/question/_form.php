@@ -42,7 +42,7 @@ jQuery('#answers').on('afterInit', function(){
         'prompt' => '... Select Question Type'
     ]) ?>
 
-    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'answers')->widget(MultipleInput::class, [
         'max' => 4,
